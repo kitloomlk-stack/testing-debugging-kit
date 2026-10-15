@@ -1,0 +1,12 @@
+# Debugging discipline
+
+Always apply this when something fails.
+
+- Reproduce the failure first and record the exact error, input and environment.
+- State a hypothesis and the evidence that would confirm or reject it before editing code.
+- Do not make speculative edits "to see if it helps", and do not change several things at once.
+- Fix the cause, not the symptom. Do not add a try/catch, a null check or a retry just to silence an error you do not understand.
+- Add a regression test that fails before the fix and passes after.
+- Remove temporary logging, breakpoints and debug flags before finishing.
+- Never claim a fix works, a test passes or a build is green without running the command and reading its output in this session.
+- After three failed attempts, stop and report what you know, what you ruled out and what you suggest next.

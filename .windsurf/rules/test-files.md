@@ -1,0 +1,20 @@
+---
+trigger: glob
+globs: "**/*.test.*,**/*.spec.*,**/__tests__/**,**/tests/**,**/test_*.py,**/*_test.go"
+description: "Conventions for writing and editing test files."
+---
+
+# Test file conventions
+
+Applies when you create or edit a test file.
+
+- Name each test for the behaviour it checks, in plain words.
+- One behaviour per test. If the name needs "and", split it.
+- Structure: arrange, act, assert. Keep setup visible in the test or in a clearly named helper.
+- Assert on observable outcomes. Do not assert on private functions or incidental call order.
+- Fake only external boundaries (network, clock, randomness, slow I/O). Never stub the unit under test.
+- Each test owns its data and cleans up after itself. No dependence on test order.
+- Never leave `.only`, `.skip`, `xit`, `fit`, or a commented-out assertion behind.
+- When fixing a bug, add the test first and confirm it fails for the right reason.
+- When a test fails, read the failure message before changing the test or the code.
+- Match the existing framework, assertion style and file layout of the repository. Do not add a new test library without asking.
